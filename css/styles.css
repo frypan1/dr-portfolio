@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #EFF5FF;
+  --dark-color: #4DABE5;
+  --container-normal: 1100px;
+  --container-wide: 1400px;
+  --container-narrow: 900px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  padding-top: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Utility Classes */
+.bg-primary {
+  background: var(--primary-color);
+  color: #333;
+}
+
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-dark .bg-primary {
+  padding: 0 0.3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1px solid #333;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.section-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-normal);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-lg {
+  max-width: var(--container-wide);
+}
+
+.container-sm {
+  max-width: var(--container-narrow);
+}
+
+/* Header */
+.header {
+  margin: 1.5rem auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #333;
+  padding: 1rem 1rem;
+  margin: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header .header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.header .main-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.header .main-menu a {
+  padding: 0.5rem 1rem;
+}
+
+.header .main-menu a:hover {
+  background: var(--primary-color);
+}
+
+.current {
+  background: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #aaa;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer .footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer img {
+  width: 120px;
+  height: 35px;
+}
+
+.footer h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  margin: 0.2rem;
+}
+
+
+/* Services */
+.first-service{
+  padding-top: 3rem 1rem 4rem;
+}
+
+.services {
+  padding: 3rem 1rem 4rem;
+}
+
+.services-flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.service-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.services-flex-work {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-item-work {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+  padding: 15px;
+}
+
+.services ul li {
+  padding-bottom: 10px;
+}
+
+.services ol {
+  padding-left: 1.5rem; /* Aligns numbers inside the container */
+}
+
+.services ol li {
+  padding-left: 0.5rem; /* Ensures text doesn't get too close to the numbers */
+}
+
+
+.service-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+/* Team */
+.team {
+  padding: 3rem 1rem 4rem;
+}
+
+.team-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.team-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* map */
+.map-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.map-item {
+  width: 100%;
+}
+
+.map-item iframe {
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+  border: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header .header-flex,
+  .footer .footer-flex,
+  .services .services-flex,
+  .team .team-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* issue */
+
+  .first-service{
+    padding-top: 6rem;
+  }
+
+  .footer .footer-flex {
+    text-align: center;
+  }
+
+  /* Adjust Team Section for Mobile */
+  .team-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-item {
+    width: 100%;
+    max-width: 500px;
+  }
+}
